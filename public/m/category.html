@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="assets/mui/css/mui.min.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/category.css"/>
+	<link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+	<script src="./assets/zepto/zepto.min.js"></script>
+	<script src="assets/mui/js/mui.min.js"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav my-header">
+		<h1 class="mui-title">乐淘云购</h1>
+		<a class="mui-icon mui-icon-search mui-pull-right"></a>
+	</header>
+	<nav class="mui-bar mui-bar-tab my-footer">
+		<a class="mui-tab-item mui-active" href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="category.html">
+			<span class="mui-icon mui-icon-bars"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item" href="cart.html">
+			<span class="mui-icon fa fa-shopping-cart"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item" href="user.html">
+			<span class="mui-icon mui-icon-person"></span>
+			<span class="mui-tab-label">会员中心</span>
+		</a>
+	</nav>
+	<div class="mui-content category-content">
+		<!--左侧栏-->
+		<div class="category-left">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll cate-first">
+
+					<!--左侧栏信息坑-->
+
+				</div>
+			</div>
+		</div>
+		<!--右侧栏-->
+		<div class="category-right">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-clearfix">
+						<!--<li>-->
+							<!--<a href="javascript:;">-->
+								<!--<img src="./images/brand1.png" alt=""/>-->
+								<!--<p>耐克</p>-->
+							<!--</a>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<a href="javascript:;">-->
+								<!--<img src="./images/brand2.png" alt=""/>-->
+								<!--<p>阿迪</p>-->
+							<!--</a>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<a href="javascript:;">-->
+								<!--<img src="./images/brand3.png" alt=""/>-->
+								<!--<p>新百伦</p>-->
+							<!--</a>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<a href="javascript:;">-->
+								<!--<img src="./images/brand4.png" alt=""/>-->
+								<!--<p>耐克</p>-->
+							<!--</a>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<a href="javascript:;">-->
+								<!--<img src="./images/brand5.png" alt=""/>-->
+								<!--<p>耐克</p>-->
+							<!--</a>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<a href="javascript:;">-->
+								<!--<img src="./images/brand6.png" alt=""/>-->
+								<!--<p>耐克</p>-->
+							<!--</a>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<a href="javascript:;">-->
+								<!--<img src="./images/brand7.png" alt=""/>-->
+								<!--<p>耐克</p>-->
+							<!--</a>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<a href="javascript:;">-->
+								<!--<img src="./images/brand8.png" alt=""/>-->
+								<!--<p>耐克</p>-->
+							<!--</a>-->
+						<!--</li>-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../admin/assets/artTemplate/template-native(1).js"></script>
+	<script src="./js/category.js"></script>
+	<script type="text/html" id="leftCate">
+		<% for(var i=0;i<data.length;i++){ %>
+			<a href="javascript:;" data-id="<%=data[i].id %>"><%=data[i].categoryName %></a>
+		<% } %>
+	</script>
+	<script type="text/html" id="rightCate">
+		<% for(var i=0;i<rows.length;i++){ %>
+			<li>
+				<a href="javascript:;">
+					<img src="<%=rows[i].brandLogo %>" alt=""/>
+					<p><%=rows[i].brandName %></p>
+				</a>
+			</li>
+		<% } %>
+		<!--如果没有数据显示-->
+		<% if(!rows.length){ %>
+			<li class="noresult">暂无数据</li>
+		<% } %>
+	</script>
+</body>
+</html>
